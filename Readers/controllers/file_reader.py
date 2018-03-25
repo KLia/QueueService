@@ -24,8 +24,7 @@ class FileReader:
             filedir, filename = os.path.split(filepath)
             item = QueueItem(filename, line)
             item_json = item.to_dict()
-            requests.post(url, json=item_json, headers=headers)
-            #r = requests.get("http://127.0.0.1:5000/api/v1.0/queue/items/dequeue")
-            #print (r.text)
-    
+            r=requests.post(url, json=item_json, headers=headers)
+
+        print("Finished writing file to server")
 
